@@ -1,28 +1,18 @@
 <?php 
 
 // daftar deret huruf
-$input = "ABCDBE";
+$input = "ABBA";
 
 // memecah string input
 $deret_huruf = str_split($input);
 
-for ($i=0; $i<strlen($input); $i++) {
+// menghitung jumlah masing2 huruf
+$jumlahHuruf = array_count_values($deret_huruf);
 
-	// menyimpan deret huruf;
-    $deret_huruf[$i] = $input[$i];
-}
-
-// untuk menampung huruf double
 $huruf = "";
-
-for ($i=0; $i < count($deret_huruf); $i++) { 
-
-	// perulangan mencari huruf yang sama
-	for ($j=$i+1; $j < count($deret_huruf); $j++) { 
-		if ($deret_huruf[$i] == $deret_huruf[$j]) {
-			$huruf = $deret_huruf[$i];
-			break 2;
-		}
+foreach ($jumlahHuruf as $key => $value) {
+	if ($value == 2) {
+		$huruf = $key;
 	}
 }
 
