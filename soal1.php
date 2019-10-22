@@ -1,7 +1,16 @@
 <?php 
 
 // daftar deret huruf
-$deret_huruf = ['A','B','C','D','B','E'];
+$input = "ABCDBE";
+
+// memecah string input
+$deret_huruf = str_split($input);
+
+for ($i=0; $i<strlen($input); $i++) {
+
+	// menyimpan deret huruf;
+    $deret_huruf[$i] = $input[$i];
+}
 
 // untuk menampung huruf double
 $huruf = "";
